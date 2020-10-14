@@ -2,6 +2,10 @@
 
 session_start();
 
+if (isset($_SESSION['user_id'])) {
+    header('Location: /php-login');
+}
+
 require 'database.php';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])) {
